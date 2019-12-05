@@ -1,0 +1,61 @@
+#settings
+{
+    /* margin: var(--base); */
+
+    .headers
+    {
+        /* display: flex; */
+
+        > :first-child
+        {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: row;
+            align-content: center;
+
+            label
+            {
+                flex-grow: 1;
+                line-height: 1.4em;
+            }
+
+            button
+            {
+                align-self: flex-end;
+            }
+        }
+
+        > .disabled
+        {
+            text-align: center;
+            color: var(--gray);
+        }
+
+        ul
+        {
+            display: flex;
+            flex-direction: column;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            li
+            {
+                display: flex;
+                flex-grow: 1;
+                margin-bottom: var(--base);
+
+                input
+                {
+                    margin-left: calc(var(--base) / 2);
+                    margin-right: calc(var(--base) / 2);
+                }
+                :first-child
+                {
+                    margin-left: 0;
+                }
+            }
+        }
+        
+    }
+}

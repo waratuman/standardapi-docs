@@ -1,0 +1,4 @@
+[submodule "src/elm-uniform"]
+	path = src/elm-uniform
+	url = git@github.com:waratuman/elm-uniform.git
+	branch = master

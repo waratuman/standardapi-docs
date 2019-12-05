@@ -1,0 +1,38 @@
+#model
+{
+    > .uniform-card-body
+    {
+        padding: 0;
+    }
+
+    .comment
+    {
+        padding: var(--base);
+    }
+
+    tr.subheader th
+    {
+        font-size: inherit;
+        /* color: inherit; */
+        font-weight: normal;
+    }
+
+    td
+    {
+        font-family: var(--font-family-mono);
+    }
+
+    tr.expanded-definition
+    {
+        border-top: 1px solid var(--gray);
+        border-bottom: 1px solid var(--gray);
+        box-shadow: inset 0 2px 4px 0 rgba(0,0,0,.06);
+    }
+
+    /* tr.expanded-definition + tr:not(.expanded-definition)
+    {
+        border-bottom: 1px solid var(--gray);
+        box-shadow: inset 0 2px 4px 0 rgba(0,0,0,.06);
+    } */
+
+}

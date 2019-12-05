@@ -1,0 +1,38 @@
+#models
+{
+    > .uniform-card-header
+    {
+        padding: 0;
+        display: flex;
+
+        input
+        {
+            flex-grow: 1;
+            border: 0;
+            padding: var(--base);
+            font-size: var(--base);
+        }
+    }
+
+    > .uniform-card-body
+    {
+        padding: 0;
+    }
+
+    td
+    {
+        padding: 0;
+
+        > a
+        {
+            display: block;
+            padding: var(--base);
+            text-decoration: none;
+
+            &:visited
+            {
+                color: var(--blue);
+            }
+        }
+    }
+}
