@@ -12,7 +12,6 @@ import Ports exposing (alert, logError, logStandardApiError)
 import Route exposing (Route, pathFor)
 import StandardApi
 import StandardApi.Schema exposing (Schema)
-import Task
 import Uniform
 import Uniform.Attributes
 import Uniform.Icons
@@ -119,7 +118,16 @@ update msg ({ env } as model) =
             ( { model | page = page }, Cmd.map pagesTranslator pageCmd )
 
         SetEnvApi api ->
-            ( { model | env = { env | api = api } }, Ports.setApiConfig (Just api) )
+            let
+                ( newEnv, envCmd ) =
+                    Env.fetchSchema { env | api = api }
+            in
+            ( { model | env = newEnv }
+            , Cmd.batch
+                [ Ports.setApiConfig (Just api)
+                , Cmd.map envTranslator envCmd
+                ]
+            )
 
 
 view : Model -> Document Msg
